@@ -3,7 +3,7 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Create Listing</div>
+            <div class="card-header">Create Listing  <a href="/dashboard" class="float-right btn btn-secondary btn-xs">Go Back</a></div>
 
             <div class="card-body">
                 @if (session('status'))
@@ -22,7 +22,7 @@
                     {{Form::bsText('phone','',['placeholder'=> 'Contact Phone'])}}
                     {{Form::bsText('address','',['placeholder'=> 'Business Address'])}}
                     {{Form::bsTextArea('bio','',['placeholder'=> 'About This Business '])}}
-                    {{Form::bsSubmit('submit')}}   
+                    {{Form::bsSubmit(['submit','class'=>'btn btn-dark'])}}   
 
                 {!! Form::close() !!}
 
