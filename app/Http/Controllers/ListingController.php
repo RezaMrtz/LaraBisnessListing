@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth',['except'=> ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,8 @@ class ListingController extends Controller
      */
     public function index()
     {
-        //
+        $listings = Listing::OrderBy('created_at','dec')->get()  ;
+        return view('index')->with('listings', $listings);
     }
 
     /**
@@ -63,7 +67,8 @@ class ListingController extends Controller
      */
     public function show($id)
     {
-        //
+        $listings = Listing::find($id);
+        return view('showlisting')->with('listings',$listings);
     }
 
     /**
@@ -75,7 +80,6 @@ class ListingController extends Controller
     public function edit($id)
     {
         $listing = Listing::find($id);
-
         return view('editing')->with('listing',$listing);
     }
 
