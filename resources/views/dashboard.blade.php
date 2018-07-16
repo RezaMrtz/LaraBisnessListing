@@ -36,7 +36,7 @@
                                 'method'=>'POST','class'=>'float-right','onsubmit'=>'return confirm("Are you sure?")'
                                 ]) !!} 
                                 {{Form::hidden('_method','DELETE')}}    
-                                {{Form::bsSubmit('Delete',null,['class'=>'btn btn-danger float-left'])}}   
+                                {{Form::submit('Delete',null,['class'=>'btn btn-danger float-left'])}}   
                             {!! Form::close() !!}
                         </td>
                     </tr>
